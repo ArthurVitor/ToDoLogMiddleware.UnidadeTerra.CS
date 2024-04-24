@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToDoList</name>
+    </assembly>
+    <members>
+        <member name="M:ToDoList.Controllers.ToDoController.AddToDo(ToDoList.Dtos.CreateToDoDto)">
+            <summary>
+            Adds a new to do.
+            </summary>
+            <param name="toDoDto">Object with necessary fields for creating a todo</param>
+            <returns>IActionResult</returns>
+            <response code="201">If insertion is successful</response>
+        </member>
+        <member name="M:ToDoList.Controllers.ToDoController.ToDoList(System.Int32,System.Int32,System.Nullable{ToDoList.Enums.TodoPriority},System.Nullable{System.Boolean})">
+            <summary>
+            A to do list with pagination and filtering options.
+            </summary>
+            <param name="skip">Number of records to skip.</param>
+            <param name="take">Maximum number of records to return.</param>
+            <param name="priority">Priority of the to do.</param>
+            <param name="isCompleted">Indicates if the to do is completed.</param>
+            <returns>To do list.</returns>
+        </member>
+        <member name="M:ToDoList.Controllers.ToDoController.GetToDoById(System.Int32)">
+            <summary>
+            Gets a to do by its ID.
+            </summary>
+            <param name="id">ID of the to do.</param>
+            <returns>The to do corresponding to the specified ID.</returns>
+        </member>
+        <member name="M:ToDoList.Controllers.ToDoController.UpdateIsCompleted(System.Int32)">
+            <summary>
+            Updates the completion status of a to do.
+            </summary>
+            <param name="id">ID of the to do.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:ToDoList.Controllers.ToDoController.EditToDo(System.Int32,ToDoList.Dtos.UpdateToDoDto)">
+            <summary>
+            Updates a to do.
+            </summary>
+            <param name="id">ID of the to do.</param>
+            <param name="toDoDto">Object with updated to do data.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:ToDoList.Controllers.ToDoController.DeleteToDo(System.Int32)">
+            <summary>
+            Deletes a to do.
+            </summary>
+            <param name="id">ID of the 'to do' to delete.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:ToDoList.Controllers.ToDoController.HandleUnknownRequests">
+            <summary>
+            Handles unknown requests and returns a 404 status.
+            </summary>
+            <returns>Status 404 (NotFound).</returns>
+        </member>
+    </members>
+</doc>
