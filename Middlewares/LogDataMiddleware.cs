@@ -18,16 +18,23 @@ public class LogDataMiddleware
 
     public async Task Invoke(HttpContext context)
     {
-        var startTime = Stopwatch.StartNew();
-        await _next(context);
-        startTime.Stop();
-        var timeTaken = startTime.ElapsedMilliseconds;
+        if (!context.Request.Path.StartsWithSegments("/api/ToDo/logToDos"))
+        {
+            var startTime = Stopwatch.StartNew();
+            await _next(context);
+            startTime.Stop();
+            var timeTaken = startTime.ElapsedMilliseconds;
 
-        var request = context.Request;
-        var response = context.Response;
+            var request = context.Request;
+            var response = context.Response;
         
-        var remoteIpAddress = context.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
-        var statusCode = response.StatusCode.ToString();
-        _loggerData.CreateToDo(request.Method, request.Path, remoteIpAddress, timeTaken, statusCode);
+            var remoteIpAddress = context.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
+            var statusCode = response.StatusCode.ToString();
+            _loggerData.CreateToDo(request.Method, request.Path, remoteIpAddress, timeTaken, statusCode);
+        }
+        else
+        {
+            await _next(context); 
+        }
     }
 }

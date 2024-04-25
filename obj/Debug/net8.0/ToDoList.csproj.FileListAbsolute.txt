@@ -107,3 +107,4 @@ C:\Users\arthu\Desktop\ToDoList\obj\Debug\net8.0\ToDoList.xml
 C:\Users\arthu\Desktop\ToDoList\obj\Debug\net8.0\ToDoList.pdb
 C:\Users\arthu\Desktop\ToDoList\obj\Debug\net8.0\ToDoList.genruntimeconfig.cache
 C:\Users\arthu\Desktop\ToDoList\obj\Debug\net8.0\ref\ToDoList.dll
+C:\Users\arthu\Desktop\ToDoList\obj\Debug\net8.0\ToDoList.sourcelink.json
